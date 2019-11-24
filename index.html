@@ -228,7 +228,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cai1001.github.io/2019/11/24/Effective-C/">
+    <link itemprop="mainEntityOfPage" href="https://cai1001.github.io/2019/11/24/2019-11-24/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Albert">
@@ -247,7 +247,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/11/24/Effective-C/" itemprop="url">Effective C++</a></h1>
+                <a class="post-title-link" href="/2019/11/24/2019-11-24/" itemprop="url">2019-11-24</a></h1>
         
 
         <div class="post-meta">
@@ -259,7 +259,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-24T16:43:18+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-24T17:01:31+08:00">
                 2019-11-24
               </time>
             
@@ -269,28 +269,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -321,7 +299,29 @@
       
         
           
-            
+            <h3 id="条款10-令operator-返回一个reference-to-this"><a href="#条款10-令operator-返回一个reference-to-this" class="headerlink" title="条款10 令operator = 返回一个reference to *this"></a>条款10 令operator = 返回一个reference to *this</h3><p>c++赋值可以写成连锁的形式</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = y = z = <span class="number">15</span>;    <span class="comment">// x = (y = ( z = 15));</span></span><br></pre></td></tr></table></figure>
+
+<p>这个规则是一个约定，无强制性，标准程序库例如 string, vector, complex等 共同遵守的规则。</p>
+<h3 id="条款11-在operator-中处理“自我赋值”"><a href="#条款11-在operator-中处理“自我赋值”" class="headerlink" title="条款11 在operator = 中处理“自我赋值”"></a>条款11 在operator = 中处理“自我赋值”</h3><p>对象赋值：释放原有的对象，然后通过调用赋值的对象的构造函数，返回赋值对象的副本的引用。</p>
+<p>潜在问题：赋值对象 和 被赋值对象是同一个对象的时候，如果先释放被赋值对象就会导致赋值对象也被释放，此时需要先证同，在赋值对象和被赋值对象是同一个的时候。</p>
+<p>方案1</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Widget&amp; Widget::<span class="keyword">operator</span>= (<span class="keyword">const</span> Widget&amp; rhs)&#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">this</span> == rhs) <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">  <span class="keyword">delete</span> <span class="keyword">this</span>-&gt;pb;</span><br><span class="line">  <span class="keyword">this</span>-&gt;pb = <span class="keyword">new</span> Bitmap(*rhs.pb);</span><br><span class="line">  <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>问题： 如果 在new Bitmap截断出现异常（分配内存不足 或 Bitmap的copy构造函数异常）Widget最终会持有一个指针指向一块被删除的Bitmap。这样的指针有害。</p>
+<p>方案2</p>
+ <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Widget&amp; Widget::<span class="keyword">operator</span>= (<span class="keyword">const</span> Widget&amp; rhs)&#123;</span><br><span class="line">	Bitmap* pOrig = pb;</span><br><span class="line">  <span class="keyword">this</span>-&gt;pb = <span class="keyword">new</span> Bitmap(*rhs.pb);</span><br><span class="line">  <span class="keyword">delete</span> pOrig;</span><br><span class="line">  <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>方案3 copy-and-swap 技术</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Widget&amp; Widget::<span class="keyword">operator</span>= (<span class="keyword">const</span> Widget&amp; rhs)&#123;</span><br><span class="line">	Widget temp(<span class="keyword">this</span>);</span><br><span class="line">	swap(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="条款12-复制对象时勿忘复制其每一部分"><a href="#条款12-复制对象时勿忘复制其每一部分" class="headerlink" title="条款12 复制对象时勿忘复制其每一部分"></a>条款12 复制对象时勿忘复制其每一部分</h3><p>如果你声明自己的copying 函数，意思就是告诉编译器你不喜欢使用缺省实现的某些行为。编译器也会在你的代码几乎出错时，也不会提示。</p>
+<p>当我们自己声明一个copying构造函数，确保（1）赋值所有的local成员变量 （2）调用所有base classes内的适当的copying函数</p>
+
           
         
       
@@ -408,15 +408,6 @@
               </div>
             
 
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">分类</span>
-                </a>
-              </div>
             
 
             
