@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cai1001.github.io/"/>
-  <updated>2019-12-11T02:14:26.125Z</updated>
+  <updated>2019-12-19T02:53:18.297Z</updated>
   <id>https://cai1001.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Awesome CS courses</title>
+    <link href="https://cai1001.github.io/2019/12/19/cs-courses/"/>
+    <id>https://cai1001.github.io/2019/12/19/cs-courses/</id>
+    <published>2019-12-19T02:23:14.000Z</published>
+    <updated>2019-12-19T02:53:18.297Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="计算机系统"><a href="#计算机系统" class="headerlink" title="计算机系统"></a>计算机系统</h2><h4 id="CS-61C-Great-Ideas-in-Computer-Architecture-Machine-Structures-UC-Berkeley"><a href="#CS-61C-Great-Ideas-in-Computer-Architecture-Machine-Structures-UC-Berkeley" class="headerlink" title="CS 61C Great Ideas in Computer Architecture (Machine Structures) UC Berkeley"></a>CS 61C Great Ideas in Computer Architecture (Machine Structures) UC Berkeley</h4><p>课程覆盖了 C 语言、汇编语言（MIPS 指令集）、CPU 设计（包括逻辑电路/Cache/流水线）、内存管理、并发编程、数据中心(Warehouse-Scale Computer)等话题，内容偏基础，老师讲得非常棒。</p><p><a href="http://www-inst.eecs.berkeley.edu/~cs61c/sp15/" target="_blank" rel="noopener">课程主页</a><br><a href="https://www.bilibili.com/video/av40428315/" target="_blank" rel="noopener">课程视频</a><br><a href="https://zhjwpku.com/assets/pdf/ComputerOrganizationAndDesign5thEdition2014.pdf" target="_blank" rel="noopener">教材Computer Organization And Design 5th Edition</a><br><a href="https://hkn.eecs.berkeley.edu/exams/course/CS/61C" target="_blank" rel="noopener">试题</a></p><h4 id="15-213-Introduction-to-Computer-Systems-CMU"><a href="#15-213-Introduction-to-Computer-Systems-CMU" class="headerlink" title="15-213 Introduction to Computer Systems CMU"></a>15-213 Introduction to Computer Systems CMU</h4><p>ICS 能让你成为更高效的程序员，特别是在处理性能，可移植性和健壮性问题时。BTW，15213 是 CMU 的邮编。<br><a href="http://www.cs.cmu.edu/~213/index.html" target="_blank" rel="noopener">课程主页</a><br><a href="https://scs.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx#folderID=%22b96d90ae-9871-4fae-91e2-b1627b43e25e%22&view=2" target="_blank" rel="noopener">课程视频</a><br><a href="http://csapp.cs.cmu.edu/" target="_blank" rel="noopener">教材Computer Systems: A Programmer’s Perspective</a></p><h2 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h2><h4 id="CS106A-Programming-Methodology-Spring-2017-Stanford"><a href="#CS106A-Programming-Methodology-Spring-2017-Stanford" class="headerlink" title="CS106A Programming Methodology, Spring 2017 Stanford"></a>CS106A <strong>Programming Methodology, Spring 2017</strong> <em>Stanford</em></h4><p>编程方法论是编程入门课程中最大的课程，也是斯坦福大学最大的课程之一。该课程使用 <strong>Java</strong> 语言着重介绍了现代软件工程原理：面向对象的设计，分解，封装，继承，多态等。课程相对简单，为了衔接之后的 <a href="http://stanford.edu/class/archive/cs/cs106b/cs106b.1184/index.shtml" target="_blank" rel="noopener">CS 106B</a>，笔者把所有的课程视频浏览了一遍。<br><a href="http://web.stanford.edu/class/cs106a/" target="_blank" rel="noopener">课程主页</a><br><a href="https://www.bilibili.com/video/av36204486/" target="_blank" rel="noopener">视频教程</a></p><h4 id="CS-106B-Programming-Abstractions-Winter-2018-Stanford"><a href="#CS-106B-Programming-Abstractions-Winter-2018-Stanford" class="headerlink" title="CS 106B Programming Abstractions, Winter 2018 Stanford"></a>CS 106B Programming Abstractions, Winter 2018 Stanford</h4><p>该课程是编程方法论的自然继承，使用 C++ 语言教学，涵盖了递归，算法分析和数据抽象等高级编程主题。<br><a href="https://zhjwpku.com/assets/pdf/books/Programming.Abstractions.in.CPP.pdf" target="_blank" rel="noopener">教材 Programming Abstractions in C++</a></p><h4 id="CS106X-Programming-Abstractions-Accelerated-Stanford"><a href="#CS106X-Programming-Abstractions-Accelerated-Stanford" class="headerlink" title="CS106X Programming Abstractions (Accelerated)Stanford"></a>CS106X Programming Abstractions (Accelerated)Stanford</h4><p>课程 106X 覆盖的内容与 106B 相同，使用 <strong>C++</strong>，但教授的速度更快，层次更深。<br><a href="http://web.stanford.edu/class/cs106x/" target="_blank" rel="noopener">课程主页</a><br><a href="https://www.bilibili.com/video/av21619854" target="_blank" rel="noopener">课程视频</a></p><h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><p>MIT算法导论<br><a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-introduction-to-algorithms-sma-5503-fall-2005/" target="_blank" rel="noopener">课程主页</a><br><a href="https://www.bilibili.com/video/av66468649?from=search&seid=7975302138455190356" target="_blank" rel="noopener">教程视频</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;计算机系统&quot;&gt;&lt;a href=&quot;#计算机系统&quot; class=&quot;headerlink&quot; title=&quot;计算机系统&quot;&gt;&lt;/a&gt;计算机系统&lt;/h2&gt;&lt;h4 id=&quot;CS-61C-Great-Ideas-in-Computer-Architecture-Machine-S
+      
+    
+    </summary>
+    
+    
+      <category term="计算机基础" scheme="https://cai1001.github.io//categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="资源" scheme="https://cai1001.github.io//tags/%E8%B5%84%E6%BA%90/"/>
+    
+  </entry>
   
   <entry>
     <title>linux 鸟哥的私房菜 -- 笔记</title>
@@ -39,21 +65,6 @@
     
     
       <category term="linux" scheme="https://cai1001.github.io//tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>20191211</title>
-    <link href="https://cai1001.github.io/2019/12/11/20191211/"/>
-    <id>https://cai1001.github.io/2019/12/11/20191211/</id>
-    <published>2019-12-11T02:03:04.000Z</published>
-    <updated>2019-12-11T02:03:04.699Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
     
   </entry>
   
