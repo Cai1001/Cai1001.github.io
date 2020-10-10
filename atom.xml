@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://cai1001.github.io/"/>
-  <updated>2020-01-06T07:37:33.835Z</updated>
+  <updated>2020-10-10T02:07:33.378Z</updated>
   <id>https://cai1001.github.io/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>intent recognition</title>
+    <link href="https://cai1001.github.io/2020/10/10/intent-recognition/"/>
+    <id>https://cai1001.github.io/2020/10/10/intent-recognition/</id>
+    <published>2020-10-10T02:07:33.000Z</published>
+    <updated>2020-10-10T02:07:33.378Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>比较好的github项目</title>
